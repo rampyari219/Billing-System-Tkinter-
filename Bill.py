@@ -43,7 +43,7 @@ def main():
 
     # Adjust size
 
-    root.title("Integer-i bill Solutions")
+    root.title("Integer-i billing Solutions")
     root_h = 731
     root_w = 1301
     root_screen_w = root.winfo_screenwidth()
