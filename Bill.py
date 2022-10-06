@@ -69,7 +69,7 @@ def main():
     invoice_no = StringVar()
     state_code = StringVar()
     hsn_code = StringVar()
-    frame_color = "#DEEAEF"
+    frame_color = "#EEEAEF"
 
     # ================================== Function =================================
 
