@@ -233,7 +233,7 @@ def main():
         getTotal.out1 = out + " Rupees"
         total_word_label = Label(get_total_frame, text="In Words :", font=("courier", 15))
         total_word_label.place(x=5, y=50)
-        total_word_label_num = Label(get_total_frame, text=getTotal.out1, font=("courier", 15), justify="left")
+        total_word_label_num = Label(get_total_frame, text=getTotal.out1, font=("courier", 17), justify="left")
         total_word_label_num.place(x=130, y=50, width=700)
 
     def delete_data():
