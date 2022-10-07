@@ -127,7 +127,7 @@ def main():
         number_in_string11 = str(num)
         out = " "
 
-        def converter(number, hundredvalue=0, thousandvalue=0, lakhvalue=0):
+        def converter(number, hundredvalue=0, thousandvalue=0, milvalue=0):
             if (number == 0):
                 return " "
 
@@ -139,7 +139,7 @@ def main():
                 elif (thousandvalue == 1):
                     return units[number] + " Thousand "
 
-                elif (lakhvalue == 3):
+                elif (milvalue == 3):
                     return units[number] + " Lakh "
 
                 else:
@@ -151,7 +151,7 @@ def main():
             elif (number == 0 and thousandvalue == 1):
                 return " "
 
-            elif (number == 0 and lakhvalue == 1):
+            elif (number == 0 and milvalue == 1):
                 return " "
 
             elif (number >= 10 and number <= 19):
@@ -159,7 +159,7 @@ def main():
                 if (thousandvalue == 1):
                     return ((teens[(number % 10)]) + " Thousand ")
 
-                elif (lakhvalue == 1):
+                elif (milvalue == 1):
                     return ((teens[(number % 10)]) + " Lakhs ")
 
                 else:
@@ -171,7 +171,7 @@ def main():
             if (thousandvalue == 1):
                 return (tens[int(number_in_string[0])] + " " + units[int(number_in_string[1])] + " Thousand ")
 
-            elif (lakhvalue == 1):
+            elif (milvalue == 1):
                 return (tens[int(number_in_string[0])] + " " + units[int(number_in_string[1])] + " Lakhs ")
 
             else:
@@ -200,25 +200,25 @@ def main():
                 int(number_in_string11[3::1]))
 
         elif (num >= 100000 and num <= 999999):
-            out = converter(int(number_in_string11[0]), lakhvalue=1) + converter(int(number_in_string11[1:3]),
+            out = converter(int(number_in_string11[0]), milvalue=1) + converter(int(number_in_string11[1:3]),
                                                                                  thousandvalue=1) + converter(
                 int(number_in_string11[3]), hundredvalue=1) + converter(int(number_in_string11[4::1]))
 
         elif (num >= 1000000 and num <= 9999999):
-            out = converter(int(number_in_string11[0:2]), lakhvalue=1) + converter(int(number_in_string11[2:4]),
+            out = converter(int(number_in_string11[0:2]), milvalue=1) + converter(int(number_in_string11[2:4]),
                                                                                    thousandvalue=1) + converter(
                 int(number_in_string11[4]), hundredvalue=1) + converter(int(number_in_string11[5:]))
 
         elif (num >= 10000000 and num <= 99999999):
             out = converter(int(number_in_string11[0])) + " Crore " + converter(int(number_in_string11[1:3]),
-                                                                                lakhvalue=1) + converter(
+                                                                                milvalue=1) + converter(
                 int(number_in_string11[3:5]), thousandvalue=1) + converter(int(number_in_string11[5]),
                                                                            hundredvalue=1) + converter(
                 int(number_in_string11[6:]))
 
         elif (num >= 100000000 and num <= 999999999):
             out = converter(int(number_in_string11[0:2])) + " Crore " + converter(int(number_in_string11[2:4]),
-                                                                                  lakhvalue=1) + converter(
+                                                                                  milvalue=1) + converter(
                 int(number_in_string11[4:6]), thousandvalue=1) + converter(int(number_in_string11[6]),
                                                                            hundredvalue=1) + converter(
                 int(number_in_string11[7:]))
@@ -226,7 +226,7 @@ def main():
         elif (num >= 1000000000 and num <= 9999999999):
             out = converter(int(number_in_string11[0]), hundredvalue=1) + converter(
                 int(number_in_string11[1:3])) + " Crore " + converter(int(number_in_string11[3:5]),
-                                                                      lakhvalue=1) + converter(
+                                                                      milvalue=1) + converter(
                 int(number_in_string11[5:7]),
                 thousandvalue=1) + converter(
                 int(number_in_string11[7]), hundredvalue=1) + converter(int(number_in_string11[8:]))
