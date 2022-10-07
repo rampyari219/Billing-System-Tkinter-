@@ -77,10 +77,10 @@ def main():
 
     def SubmitData():
         product_names = product_name.get()
-        quantity = float(product_qty.get())
-        rate = float(product_rate.get())
+        quantity = int(product_qty.get())
+        rate = int(product_rate.get())
         hsn = hsn_code.get()
-        total = float(quantity * rate)
+        total = int(quantity * rate)
         Products_array.append((product_names, hsn, quantity, rate, total))
         tree.delete(*tree.get_children())
 
