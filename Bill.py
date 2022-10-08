@@ -240,7 +240,7 @@ def main():
         if not tree.selection():
             result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
         else:
-            result = tkMessageBox.askquestion('', 'Are you sure you want to delete this product?', icon="warning")
+            result = tkMessageBox.askquestion('', '', icon="warning")
             if result == 'yes':
                 curItem = tree.focus()
                 contents = (tree.item(curItem))
