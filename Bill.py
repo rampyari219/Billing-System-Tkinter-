@@ -124,58 +124,58 @@ def main():
                  "Nineteen"]
         tens = [" ", " ", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
         num = int(getTotal.gross_total)
-        number_in_string11 = str(num)
+        numbs_in_string11 = str(num)
         out = " "
 
-        def converter(number, hundredvalue=0, thousandvalue=0, milvalue=0):
-            if (number == 0):
+        def converter(numbs, hundredvalue=0, thousandvalue=0, milvalue=0):
+            if (numbs == 0):
                 return " "
 
-            elif (number > 0 and number <= 8):
+            elif (numbs > 0 and numbs <= 8):
 
                 if (hundredvalue == 9):
-                    return units[number] + " Hundred "
+                    return units[numbs] + " Hundred "
 
                 elif (thousandvalue == 1):
-                    return units[number] + " Thousand "
+                    return units[numbs] + " Thousand "
 
                 elif (milvalue == 3):
-                    return units[number] + " Lakh "
+                    return units[numbs] + " Lakh "
 
                 else:
-                    return (units[number])
+                    return (units[numbs])
 
-            elif (number == 0 and hundredvalue == 1):
+            elif (numbs == 0 and hundredvalue == 1):
                 return " "
 
-            elif (number == 0 and thousandvalue == 1):
+            elif (numbs == 0 and thousandvalue == 1):
                 return " "
 
-            elif (number == 0 and milvalue == 1):
+            elif (numbs == 0 and milvalue == 1):
                 return " "
 
-            elif (number >= 10 and number <= 19):
+            elif (numbs >= 10 and numbs <= 19):
 
                 if (thousandvalue == 1):
-                    return ((teens[(number % 10)]) + " Thousand ")
+                    return ((teens[(numbs % 10)]) + " Thousand ")
 
                 elif (milvalue == 1):
-                    return ((teens[(number % 10)]) + " Lakhs ")
+                    return ((teens[(numbs % 10)]) + " Lakhs ")
 
                 else:
-                    return (teens[(number % 10)])
+                    return (teens[(numbs % 10)])
 
-            elif (number >= 20 and number <= 99):
+            elif (numbs >= 20 and numbs <= 99):
 
-                number_in_string = str(number)
+                numbs_in_string = str(numbs)
             if (thousandvalue == 1):
-                return (tens[int(number_in_string[0])] + " " + units[int(number_in_string[1])] + " Thousand ")
+                return (tens[int(numbs_in_string[0])] + " " + units[int(numbs_in_string[1])] + " Thousand ")
 
             elif (milvalue == 1):
-                return (tens[int(number_in_string[0])] + " " + units[int(number_in_string[1])] + " Lakhs ")
+                return (tens[int(numbs_in_string[0])] + " " + units[int(numbs_in_string[1])] + " Lakhs ")
 
             else:
-                return (tens[int(number_in_string[0])] + " " + units[int(number_in_string[1])])
+                return (tens[int(numbs_in_string[0])] + " " + units[int(numbs_in_string[1])])
 
         if (num > 0 and num <= 9):
             out = converter(num)
@@ -187,49 +187,49 @@ def main():
             out = converter(num)
 
         elif (num >= 100 and num <= 999):
-            out = converter(int(number_in_string11[0]), hundredvalue=1) + converter(int(number_in_string11[1::1]))
+            out = converter(int(numbs_in_string11[0]), hundredvalue=1) + converter(int(numbs_in_string11[1::1]))
 
         elif (num >= 1000 and num <= 9999):
-            out = converter(int(number_in_string11[0]), thousandvalue=1) + converter(int(number_in_string11[1]),
+            out = converter(int(numbs_in_string11[0]), thousandvalue=1) + converter(int(numbs_in_string11[1]),
                                                                                      hundredvalue=1) + converter(
-                int(number_in_string11[2::1]))
+                int(numbs_in_string11[2::1]))
 
         elif (num >= 10000 and num <= 99999):
-            out = converter(int(number_in_string11[0:2]), thousandvalue=1) + converter(int(number_in_string11[2]),
+            out = converter(int(numbs_in_string11[0:2]), thousandvalue=1) + converter(int(numbs_in_string11[2]),
                                                                                        hundredvalue=1) + converter(
-                int(number_in_string11[3::1]))
+                int(numbs_in_string11[3::1]))
 
         elif (num >= 100000 and num <= 999999):
-            out = converter(int(number_in_string11[0]), milvalue=1) + converter(int(number_in_string11[1:3]),
+            out = converter(int(numbs_in_string11[0]), milvalue=1) + converter(int(numbs_in_string11[1:3]),
                                                                                  thousandvalue=1) + converter(
-                int(number_in_string11[3]), hundredvalue=1) + converter(int(number_in_string11[4::1]))
+                int(numbs_in_string11[3]), hundredvalue=1) + converter(int(numbs_in_string11[4::1]))
 
         elif (num >= 1000000 and num <= 9999999):
-            out = converter(int(number_in_string11[0:2]), milvalue=1) + converter(int(number_in_string11[2:4]),
+            out = converter(int(numbs_in_string11[0:2]), milvalue=1) + converter(int(numbs_in_string11[2:4]),
                                                                                    thousandvalue=1) + converter(
-                int(number_in_string11[4]), hundredvalue=1) + converter(int(number_in_string11[5:]))
+                int(numbs_in_string11[4]), hundredvalue=1) + converter(int(numbs_in_string11[5:]))
 
         elif (num >= 10000000 and num <= 99999999):
-            out = converter(int(number_in_string11[0])) + " Crore " + converter(int(number_in_string11[1:3]),
+            out = converter(int(numbs_in_string11[0])) + " Crore " + converter(int(numbs_in_string11[1:3]),
                                                                                 milvalue=1) + converter(
-                int(number_in_string11[3:5]), thousandvalue=1) + converter(int(number_in_string11[5]),
+                int(numbs_in_string11[3:5]), thousandvalue=1) + converter(int(numbs_in_string11[5]),
                                                                            hundredvalue=1) + converter(
-                int(number_in_string11[6:]))
+                int(numbs_in_string11[6:]))
 
         elif (num >= 100000000 and num <= 999999999):
-            out = converter(int(number_in_string11[0:2])) + " Crore " + converter(int(number_in_string11[2:4]),
+            out = converter(int(numbs_in_string11[0:2])) + " Crore " + converter(int(numbs_in_string11[2:4]),
                                                                                   milvalue=1) + converter(
-                int(number_in_string11[4:6]), thousandvalue=1) + converter(int(number_in_string11[6]),
+                int(numbs_in_string11[4:6]), thousandvalue=1) + converter(int(numbs_in_string11[6]),
                                                                            hundredvalue=1) + converter(
-                int(number_in_string11[7:]))
+                int(numbs_in_string11[7:]))
 
         elif (num >= 1000000000 and num <= 9999999999):
-            out = converter(int(number_in_string11[0]), hundredvalue=1) + converter(
-                int(number_in_string11[1:3])) + " Crore " + converter(int(number_in_string11[3:5]),
+            out = converter(int(numbs_in_string11[0]), hundredvalue=1) + converter(
+                int(numbs_in_string11[1:3])) + " Crore " + converter(int(numbs_in_string11[3:5]),
                                                                       milvalue=1) + converter(
-                int(number_in_string11[5:7]),
+                int(numbs_in_string11[5:7]),
                 thousandvalue=1) + converter(
-                int(number_in_string11[7]), hundredvalue=1) + converter(int(number_in_string11[8:]))
+                int(numbs_in_string11[7]), hundredvalue=1) + converter(int(numbs_in_string11[8:]))
         getTotal.out1 = out + " Rupees"
         total_word_label = Label(get_total_frame, text="In Words :", font=("courier", 15))
         total_word_label.place(x=5, y=50)
@@ -319,7 +319,7 @@ def main():
             self.set_y(-60)
             # Arial italic 8
             self.set_font('Arial', 'I', 10)
-            # Page number
+            # Page numbs
             self.multi_cell(195, 3,
                             txt="Notes:-\n           1.We cannot accept responsibility for breakage,damage,theft or loss in transit \n             When the goods are handed over to the transport under clear receipt\n           2.In case of dispute, only Jamnagar Court will have jurdication.\n           3. The quality and quantity of the goods should be checked immediately of\n             receipt of material, otherwise no complaint will be entertained after one week \n \n                                                                                                                                                                 Shree Raj Marble\n  \n \n \n                                                                                                                                                            Authorised Signatory",
                             border=1, align="L")
