@@ -17,17 +17,17 @@ try:
 except:
     pass
 
-splash_root = Tk()
+split = Tk()
 spalsh_h = 450
 spalsh_w = 611
-splash_screen_w = splash_root.winfo_screenwidth()
-splash_screen_h = splash_root.winfo_screenheight()
+splash_screen_w = split.winfo_screenwidth()
+splash_screen_h = split.winfo_screenheight()
 s_x = (splash_screen_w / 2) - (spalsh_w / 2)
 s_y = (splash_screen_h / 2) - (spalsh_h / 2)
-splash_root.geometry(f'{spalsh_w}x{spalsh_h}+{int(s_x)}+{int(s_y)}')
-splash_root.title("Integer-i Billing Solutions")
+split.geometry(f'{spalsh_w}x{spalsh_h}+{int(s_x)}+{int(s_y)}')
+split.title("Integer-i Billing Solutions")
 # Set Label
-canvas = Canvas(splash_root, width=600, height=480)
+canvas = Canvas(split, width=600, height=480)
 canvas.pack()
 img = PhotoImage(file="inter.png")
 canvas.create_image(321, 251, anchor=CENTER, image=img)
@@ -36,7 +36,7 @@ canvas.create_image(321, 251, anchor=CENTER, image=img)
 # main window function
 def main():
     # destory splash window
-    splash_root.destroy()
+    split.destroy()
 
     # Execute tkinter
     root = Tk()
@@ -75,7 +75,7 @@ def main():
 
     Products_array = []
 
-    def SubmitData():
+    def Submit():
         product_names = product_name.get()
         quantity = float(product_qty.get())
         rate = float(product_rate.get())
@@ -466,7 +466,7 @@ def main():
     rate_entry = Entry(add_pro_frame, textvariable=product_rate)
     rate_entry.place(x=1035, y=8, width=100)
 
-    add_pro_button = Button(add_pro_frame, text="ADD Product", command=SubmitData, padx=10, pady=10)
+    add_pro_button = Button(add_pro_frame, text="ADD Product", command=Submit, padx=10, pady=10)
     add_pro_button.place(x=600, y=50)
 
     del_button = Button(show_items_frame, text="Delete", command=delete_data, padx=2, pady=1)
@@ -515,7 +515,7 @@ def main():
 
 
 # Set Interval
-splash_root.after(3000, main)
+split.after(3000, main)
 
 
 mainloop()
