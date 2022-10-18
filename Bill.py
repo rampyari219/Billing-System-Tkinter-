@@ -75,7 +75,7 @@ def main():
 
     Products_array = []
 
-    def SubmitData():
+    def Submit():
         product_names = product_name.get()
         quantity = float(product_qty.get())
         rate = float(product_rate.get())
@@ -466,7 +466,7 @@ def main():
     rate_entry = Entry(add_pro_frame, textvariable=product_rate)
     rate_entry.place(x=1035, y=8, width=100)
 
-    add_pro_button = Button(add_pro_frame, text="ADD Product", command=SubmitData, padx=10, pady=10)
+    add_pro_button = Button(add_pro_frame, text="ADD Product", command=Submit, padx=10, pady=10)
     add_pro_button.place(x=600, y=50)
 
     del_button = Button(show_items_frame, text="Delete", command=delete_data, padx=2, pady=1)
